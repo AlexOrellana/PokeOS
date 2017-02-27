@@ -57,23 +57,84 @@ public class pokidex extends javax.swing.JFrame {
         botton_4 = new javax.swing.JButton();
         botton_5 = new javax.swing.JButton();
         Agregar_usuario = new javax.swing.JDialog();
-        jComboBox_sexoJugador = new javax.swing.JComboBox<>();
+        jComboBox_Usuario_sexoJugador = new javax.swing.JComboBox<>();
         jLabel_avatarJugador = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel_nombre = new javax.swing.JLabel();
         jLabel_sexo = new javax.swing.JLabel();
-        jTextField_nombre = new javax.swing.JTextField();
+        jTextField_Usuario_nombre = new javax.swing.JTextField();
         jLabel_edad = new javax.swing.JLabel();
-        jTextField_edad = new javax.swing.JTextField();
+        jTextField_Usuario_edad = new javax.swing.JTextField();
         jLabel_region = new javax.swing.JLabel();
-        jComboBox_region = new javax.swing.JComboBox<>();
+        jComboBox_Usuario_region = new javax.swing.JComboBox<>();
         jLabel_regiones = new javax.swing.JLabel();
         jButton_guardar = new javax.swing.JButton();
         jLabel_nombre1 = new javax.swing.JLabel();
-        jTextField_contraseña = new javax.swing.JTextField();
+        jTextField_Usuario_contraseña = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         Agregar_Pokemon = new javax.swing.JDialog();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField_pokemon_nombre = new javax.swing.JTextField();
+        jTextField_pokemon_apodo = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea_pokemon_descripcion = new javax.swing.JTextArea();
+        jTextField_pokemon_altura = new javax.swing.JTextField();
+        jTextField_pokemon_categoria = new javax.swing.JTextField();
+        jTextField_pokemon_peso = new javax.swing.JTextField();
+        jTextField_pokemon_habilidad_4 = new javax.swing.JTextField();
+        jTextField_pokemon_habilidad_1 = new javax.swing.JTextField();
+        jTextField_pokemon_habilidad_2 = new javax.swing.JTextField();
+        jTextField_pokemon_habilidad_3 = new javax.swing.JTextField();
+        jComboBox_pokemon_genero = new javax.swing.JComboBox<>();
+        jComboBox_pokemon_tipo = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea_pokemon_debilidades = new javax.swing.JTextArea();
+        jTextField_pokemon_ataque = new javax.swing.JTextField();
+        jTextField_pokemon_ataque_especial = new javax.swing.JTextField();
+        jTextField_pokemon_hp = new javax.swing.JTextField();
+        jTextField_pokemon_velocidad = new javax.swing.JTextField();
+        jTextField_pokemon_defensa = new javax.swing.JTextField();
+        jTextField_pokemon_defensa_especial = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         Login = new javax.swing.JDialog();
+        jLabel_login_nombre = new javax.swing.JLabel();
+        jTextField_login_nombre = new javax.swing.JTextField();
+        jLabel_login_password = new javax.swing.JLabel();
+        jTextField_login_password = new javax.swing.JTextField();
+        jButton_login_entras = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        menu = new javax.swing.JDialog();
+        jButton_login_entras1 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        jButton_login_entras2 = new javax.swing.JButton();
+        jButton_login_entras3 = new javax.swing.JButton();
+        jButton_login_entras4 = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         botton_login = new javax.swing.JButton();
         botton_crearUsuario = new javax.swing.JButton();
@@ -383,13 +444,13 @@ public class pokidex extends javax.swing.JFrame {
 
         Agregar_usuario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox_sexoJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
-        jComboBox_sexoJugador.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox_Usuario_sexoJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer" }));
+        jComboBox_Usuario_sexoJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_sexoJugadorActionPerformed(evt);
+                jComboBox_Usuario_sexoJugadorActionPerformed(evt);
             }
         });
-        Agregar_usuario.getContentPane().add(jComboBox_sexoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 163, -1));
+        Agregar_usuario.getContentPane().add(jComboBox_Usuario_sexoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 163, -1));
 
         jLabel_avatarJugador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/RedHGSS.gif"))); // NOI18N
         Agregar_usuario.getContentPane().add(jLabel_avatarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
@@ -409,42 +470,47 @@ public class pokidex extends javax.swing.JFrame {
         jLabel_sexo.setText("Sexo:");
         Agregar_usuario.getContentPane().add(jLabel_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        jTextField_nombre.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_Usuario_nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_nombreActionPerformed(evt);
+                jTextField_Usuario_nombreActionPerformed(evt);
             }
         });
-        Agregar_usuario.getContentPane().add(jTextField_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 310, -1));
+        Agregar_usuario.getContentPane().add(jTextField_Usuario_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 310, -1));
 
         jLabel_edad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_edad.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_edad.setText("Edad:");
         Agregar_usuario.getContentPane().add(jLabel_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
 
-        jTextField_edad.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_Usuario_edad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_edadActionPerformed(evt);
+                jTextField_Usuario_edadActionPerformed(evt);
             }
         });
-        Agregar_usuario.getContentPane().add(jTextField_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 60, -1));
+        Agregar_usuario.getContentPane().add(jTextField_Usuario_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 60, -1));
 
         jLabel_region.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_region.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_region.setText("Region:");
         Agregar_usuario.getContentPane().add(jLabel_region, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
-        jComboBox_region.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola" }));
-        jComboBox_region.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox_Usuario_region.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola" }));
+        jComboBox_Usuario_region.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_regionActionPerformed(evt);
+                jComboBox_Usuario_regionActionPerformed(evt);
             }
         });
-        Agregar_usuario.getContentPane().add(jComboBox_region, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 180, -1));
+        Agregar_usuario.getContentPane().add(jComboBox_Usuario_region, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 180, -1));
 
         jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-HGSS_Kanto.png"))); // NOI18N
         Agregar_usuario.getContentPane().add(jLabel_regiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, 300, 240));
 
         jButton_guardar.setText("Guardar");
+        jButton_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_guardarActionPerformed(evt);
+            }
+        });
         Agregar_usuario.getContentPane().add(jButton_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 520, 220, 30));
 
         jLabel_nombre1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -452,37 +518,247 @@ public class pokidex extends javax.swing.JFrame {
         jLabel_nombre1.setText("Contraseña:");
         Agregar_usuario.getContentPane().add(jLabel_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
 
-        jTextField_contraseña.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_Usuario_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_contraseñaActionPerformed(evt);
+                jTextField_Usuario_contraseñaActionPerformed(evt);
             }
         });
-        Agregar_usuario.getContentPane().add(jTextField_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 310, -1));
+        Agregar_usuario.getContentPane().add(jTextField_Usuario_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 310, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/KwnCoKk.gif"))); // NOI18N
         Agregar_usuario.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout Agregar_PokemonLayout = new javax.swing.GroupLayout(Agregar_Pokemon.getContentPane());
-        Agregar_Pokemon.getContentPane().setLayout(Agregar_PokemonLayout);
-        Agregar_PokemonLayout.setHorizontalGroup(
-            Agregar_PokemonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        Agregar_PokemonLayout.setVerticalGroup(
-            Agregar_PokemonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        Agregar_Pokemon.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        Agregar_Pokemon.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login.getContentPane());
-        Login.getContentPane().setLayout(LoginLayout);
-        LoginLayout.setHorizontalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1260, Short.MAX_VALUE)
-        );
-        LoginLayout.setVerticalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 732, Short.MAX_VALUE)
-        );
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Agregar Pokemon");
+        Agregar_Pokemon.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Imagen:");
+        Agregar_Pokemon.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 260, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Nombre:");
+        Agregar_Pokemon.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Descripcion:");
+        Agregar_Pokemon.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Apodo:");
+        Agregar_Pokemon.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Categoria:");
+        Agregar_Pokemon.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Altura:");
+        Agregar_Pokemon.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Peso:");
+        Agregar_Pokemon.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Habilidades:");
+        Agregar_Pokemon.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Genero:");
+        Agregar_Pokemon.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Tipo:");
+        Agregar_Pokemon.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Debilidades:");
+        Agregar_Pokemon.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Stats:");
+        Agregar_Pokemon.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("hp:");
+        Agregar_Pokemon.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("ataque:");
+        Agregar_Pokemon.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("defensa:");
+        Agregar_Pokemon.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Ata.Especial:");
+        Agregar_Pokemon.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Def.Especial:");
+        Agregar_Pokemon.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Velocidad:");
+        Agregar_Pokemon.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Evoluciones:");
+        Agregar_Pokemon.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 560, -1, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 300, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_apodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 300, -1));
+
+        jTextArea_pokemon_descripcion.setColumns(20);
+        jTextArea_pokemon_descripcion.setRows(5);
+        jScrollPane1.setViewportView(jTextArea_pokemon_descripcion);
+
+        Agregar_Pokemon.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 300, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 110, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 290, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 100, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_habilidad_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 280, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_habilidad_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 280, -1));
+
+        jTextField_pokemon_habilidad_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_pokemon_habilidad_2ActionPerformed(evt);
+            }
+        });
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_habilidad_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 280, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_habilidad_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 280, -1));
+
+        jComboBox_pokemon_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HOMBRE", "MUJER" }));
+        Agregar_Pokemon.getContentPane().add(jComboBox_pokemon_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 120, -1));
+
+        jComboBox_pokemon_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACERO", "AGUA", "BICHO", "DRAGON", "ELECTRICO", "FANTASMA", "FUEGO", "HADA", "HIELO", "LUCHA", "NORMAL", "PLANTA", "PSIQUICO", "ROCA", "SINIESTRO", "TIERRA", "VENENO", "VOLADOR" }));
+        Agregar_Pokemon.getContentPane().add(jComboBox_pokemon_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 120, -1));
+
+        jTextArea_pokemon_debilidades.setColumns(20);
+        jTextArea_pokemon_debilidades.setRows(5);
+        jScrollPane2.setViewportView(jTextArea_pokemon_debilidades);
+
+        Agregar_Pokemon.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 290, 100));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 240, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_ataque_especial, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 210, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_hp, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 260, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_velocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 220, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_defensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, 230, -1));
+        Agregar_Pokemon.getContentPane().add(jTextField_pokemon_defensa_especial, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, 210, -1));
+
+        jButton1.setText("Agregar Pokemon");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Agregar_Pokemon.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, -1, -1));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/animated_question_marks_bubbling1.gif"))); // NOI18N
+        jLabel28.setPreferredSize(new java.awt.Dimension(60, 60));
+        Agregar_Pokemon.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 330, 70, 80));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        Agregar_Pokemon.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 580, 220, -1));
+
+        jButton2.setText("Agregar evolucion");
+        Agregar_Pokemon.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 610, -1, -1));
+
+        jButton3.setText("Seleccionar imagen");
+        Agregar_Pokemon.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 460, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/KwnCoKk.gif"))); // NOI18N
+        Agregar_Pokemon.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1161, 712));
+
+        Login.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel_login_nombre.setText("Nombre:");
+        Login.getContentPane().add(jLabel_login_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
+        Login.getContentPane().add(jTextField_login_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 240, -1));
+
+        jLabel_login_password.setText("Contraseña:");
+        Login.getContentPane().add(jLabel_login_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
+        Login.getContentPane().add(jTextField_login_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 240, -1));
+
+        jButton_login_entras.setText("LOGIN");
+        jButton_login_entras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_login_entrasActionPerformed(evt);
+            }
+        });
+        Login.getContentPane().add(jButton_login_entras, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel6.setText("LOGIN");
+        Login.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/367266-wallpaper-pokemon.png"))); // NOI18N
+        Login.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        menu.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton_login_entras1.setText("Ver Pokemons");
+        jButton_login_entras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_login_entras1ActionPerformed(evt);
+            }
+        });
+        menu.getContentPane().add(jButton_login_entras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 210, -1));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel29.setText("MENU");
+        menu.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
+
+        jButton_login_entras2.setText("Agregar Pokemon");
+        jButton_login_entras2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_login_entras2ActionPerformed(evt);
+            }
+        });
+        menu.getContentPane().add(jButton_login_entras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 210, -1));
+
+        jButton_login_entras3.setText("Modificar Pokemon");
+        jButton_login_entras3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_login_entras3ActionPerformed(evt);
+            }
+        });
+        menu.getContentPane().add(jButton_login_entras3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 210, -1));
+
+        jButton_login_entras4.setText("Eliminar Pokemon");
+        jButton_login_entras4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_login_entras4ActionPerformed(evt);
+            }
+        });
+        menu.getContentPane().add(jButton_login_entras4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 210, -1));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/367266-wallpaper-pokemon.png"))); // NOI18N
+        menu.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -491,6 +767,11 @@ public class pokidex extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 830, 320));
 
         botton_login.setText("LOGIN");
+        botton_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botton_loginActionPerformed(evt);
+            }
+        });
         getContentPane().add(botton_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, 300, 40));
 
         botton_crearUsuario.setText("Crear Usuario");
@@ -615,14 +896,14 @@ public class pokidex extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botton_5ActionPerformed
 
-    private void jComboBox_sexoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_sexoJugadorActionPerformed
+    private void jComboBox_Usuario_sexoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_Usuario_sexoJugadorActionPerformed
         // TODO add your handling code here:
-        if (jComboBox_sexoJugador.getSelectedItem().toString() == "Hombre") {
+        if (jComboBox_Usuario_sexoJugador.getSelectedItem().toString() == "Hombre") {
             jLabel_avatarJugador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/RedHGSS.gif")));
         } else {
             jLabel_avatarJugador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/CynthiaPlatinum.gif")));
         }
-    }//GEN-LAST:event_jComboBox_sexoJugadorActionPerformed
+    }//GEN-LAST:event_jComboBox_Usuario_sexoJugadorActionPerformed
 
     private void botton_crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_crearUsuarioActionPerformed
         // TODO add your handling code here:
@@ -631,43 +912,116 @@ public class pokidex extends javax.swing.JFrame {
         Agregar_usuario.setVisible(true);
     }//GEN-LAST:event_botton_crearUsuarioActionPerformed
 
-    private void jTextField_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_nombreActionPerformed
+    private void jTextField_Usuario_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Usuario_nombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_nombreActionPerformed
+    }//GEN-LAST:event_jTextField_Usuario_nombreActionPerformed
 
-    private void jTextField_edadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_edadActionPerformed
+    private void jTextField_Usuario_edadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Usuario_edadActionPerformed
         // TODO add your handling code here:Kanto
-    }//GEN-LAST:event_jTextField_edadActionPerformed
+    }//GEN-LAST:event_jTextField_Usuario_edadActionPerformed
 
-    private void jComboBox_regionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_regionActionPerformed
+    private void jComboBox_Usuario_regionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_Usuario_regionActionPerformed
         // TODO add your handling code here:
-        if (jComboBox_region.getSelectedItem().toString() == "Kanto") {
+        if (jComboBox_Usuario_region.getSelectedItem().toString() == "Kanto") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-HGSS_Kanto.png")));
-        } else if (jComboBox_region.getSelectedItem().toString() == "Hoenn") {
+        } else if (jComboBox_Usuario_region.getSelectedItem().toString() == "Hoenn") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-Hoenn_ORAS.png")));
-        } else if (jComboBox_region.getSelectedItem().toString() == "Sinnoh") {
+        } else if (jComboBox_Usuario_region.getSelectedItem().toString() == "Sinnoh") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-Pt_Sinnoh.png")));
-        } else if (jComboBox_region.getSelectedItem().toString() == "Unova") {
+        } else if (jComboBox_Usuario_region.getSelectedItem().toString() == "Unova") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-Unova_B2W2_alt.png")));
-        } else if (jComboBox_region.getSelectedItem().toString() == "Kalos") {
+        } else if (jComboBox_Usuario_region.getSelectedItem().toString() == "Kalos") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-Kalos_alt.png")));
-        } else if (jComboBox_region.getSelectedItem().toString() == "Alola") {
+        } else if (jComboBox_Usuario_region.getSelectedItem().toString() == "Alola") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-Alola_artwork.png")));
-        } else if (jComboBox_region.getSelectedItem().toString() == "Johto") {
+        } else if (jComboBox_Usuario_region.getSelectedItem().toString() == "Johto") {
             jLabel_regiones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/300px-JohtoMap.png")));
         }
-    }//GEN-LAST:event_jComboBox_regionActionPerformed
+    }//GEN-LAST:event_jComboBox_Usuario_regionActionPerformed
 
-    private void jTextField_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_contraseñaActionPerformed
+    private void jTextField_Usuario_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Usuario_contraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_contraseñaActionPerformed
+    }//GEN-LAST:event_jTextField_Usuario_contraseñaActionPerformed
 
     private void botton_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_SalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botton_SalirActionPerformed
+
+    private void jButton_login_entrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entrasActionPerformed
+        // TODO add your handling code here:
+        menu.setSize(417, 744);
+        menu.setLocationRelativeTo(this);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jButton_login_entrasActionPerformed
+
+    private void botton_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_loginActionPerformed
+        // TODO add your handling code here:
+        Login.setSize(417, 744);
+        Login.setLocationRelativeTo(this);
+        Login.setVisible(true);
+    }//GEN-LAST:event_botton_loginActionPerformed
+
+    private void jTextField_pokemon_habilidad_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_pokemon_habilidad_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_pokemon_habilidad_2ActionPerformed
+
+    private void jButton_login_entras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras1ActionPerformed
         // TODO add your handling code here:
         pokedex.setSize(900, 700);
         pokedex.setLocationRelativeTo(this);
         pokedex.setVisible(true);
-    }//GEN-LAST:event_botton_SalirActionPerformed
+    }//GEN-LAST:event_jButton_login_entras1ActionPerformed
+
+    private void jButton_login_entras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras2ActionPerformed
+        // TODO add your handling code here:
+        Agregar_Pokemon.setSize(1175, 720);
+        Agregar_Pokemon.setLocationRelativeTo(this);
+        Agregar_Pokemon.setVisible(true);
+    }//GEN-LAST:event_jButton_login_entras2ActionPerformed
+
+    private void jButton_login_entras3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras3ActionPerformed
+        // TODO add your handling code here:
+        Agregar_Pokemon.setSize(1175, 720);
+        Agregar_Pokemon.setLocationRelativeTo(this);
+        Agregar_Pokemon.setVisible(true);
+    }//GEN-LAST:event_jButton_login_entras3ActionPerformed
+
+    private void jButton_login_entras4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_login_entras4ActionPerformed
+
+    private void jButton_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_guardarActionPerformed
+        // TODO add your handling code here:
+        String nombre = jTextField_Usuario_nombre.getText(),
+                sexo = jComboBox_Usuario_sexoJugador.getSelectedItem().toString(),
+                edad = jTextField_Usuario_edad.getText(),
+                contraseña = jTextField_Usuario_contraseña.getText(),
+                region = jComboBox_Usuario_region.getSelectedItem().toString();
+    }//GEN-LAST:event_jButton_guardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String nombre = jTextField_pokemon_nombre.getText(),
+                apodo = jTextField_pokemon_apodo.getText(),
+                descripcion = jTextArea_pokemon_descripcion.getText(),
+                altura = jTextField_pokemon_altura.getText(),
+                categoria = jTextField_pokemon_categoria.getText(),
+                peso = jTextField_pokemon_peso.getText(),
+                habilidad_1 = jTextField_pokemon_habilidad_1.getText(),
+                habilidad_2 = jTextField_pokemon_habilidad_2.getText(),
+                habilidad_3 = jTextField_pokemon_habilidad_3.getText(),
+                habilidad_4 = jTextField_pokemon_habilidad_4.getText(),
+                genero = jComboBox_pokemon_genero.getSelectedItem().toString(),
+                tipo = jComboBox_pokemon_tipo.getSelectedItem().toString(),
+                debilidades = jTextArea_pokemon_debilidades.getText(),
+                ataque = jTextField_pokemon_ataque.getText(),
+                ataque_especial = jTextField_pokemon_ataque_especial.getText(),
+                hp = jTextField_pokemon_hp.getText(),
+                velocidad = jTextField_pokemon_velocidad.getText(),
+                defensa = jTextField_pokemon_defensa.getText(),
+                defensa_especial = jTextField_pokemon_defensa_especial.getText();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -736,23 +1090,84 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JButton botton_Salir;
     private javax.swing.JButton botton_crearUsuario;
     private javax.swing.JButton botton_login;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton_guardar;
-    private javax.swing.JComboBox<String> jComboBox_region;
-    private javax.swing.JComboBox<String> jComboBox_sexoJugador;
+    private javax.swing.JButton jButton_login_entras;
+    private javax.swing.JButton jButton_login_entras1;
+    private javax.swing.JButton jButton_login_entras2;
+    private javax.swing.JButton jButton_login_entras3;
+    private javax.swing.JButton jButton_login_entras4;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox_Usuario_region;
+    private javax.swing.JComboBox<String> jComboBox_Usuario_sexoJugador;
+    private javax.swing.JComboBox<String> jComboBox_pokemon_genero;
+    private javax.swing.JComboBox<String> jComboBox_pokemon_tipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_avatarJugador;
     private javax.swing.JLabel jLabel_edad;
+    private javax.swing.JLabel jLabel_login_nombre;
+    private javax.swing.JLabel jLabel_login_password;
     private javax.swing.JLabel jLabel_nombre;
     private javax.swing.JLabel jLabel_nombre1;
     private javax.swing.JLabel jLabel_region;
     private javax.swing.JLabel jLabel_regiones;
     private javax.swing.JLabel jLabel_sexo;
-    private javax.swing.JTextField jTextField_contraseña;
-    private javax.swing.JTextField jTextField_edad;
-    private javax.swing.JTextField jTextField_nombre;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea_pokemon_debilidades;
+    private javax.swing.JTextArea jTextArea_pokemon_descripcion;
+    private javax.swing.JTextField jTextField_Usuario_contraseña;
+    private javax.swing.JTextField jTextField_Usuario_edad;
+    private javax.swing.JTextField jTextField_Usuario_nombre;
+    private javax.swing.JTextField jTextField_login_nombre;
+    private javax.swing.JTextField jTextField_login_password;
+    private javax.swing.JTextField jTextField_pokemon_altura;
+    private javax.swing.JTextField jTextField_pokemon_apodo;
+    private javax.swing.JTextField jTextField_pokemon_ataque;
+    private javax.swing.JTextField jTextField_pokemon_ataque_especial;
+    private javax.swing.JTextField jTextField_pokemon_categoria;
+    private javax.swing.JTextField jTextField_pokemon_defensa;
+    private javax.swing.JTextField jTextField_pokemon_defensa_especial;
+    private javax.swing.JTextField jTextField_pokemon_habilidad_1;
+    private javax.swing.JTextField jTextField_pokemon_habilidad_2;
+    private javax.swing.JTextField jTextField_pokemon_habilidad_3;
+    private javax.swing.JTextField jTextField_pokemon_habilidad_4;
+    private javax.swing.JTextField jTextField_pokemon_hp;
+    private javax.swing.JTextField jTextField_pokemon_nombre;
+    private javax.swing.JTextField jTextField_pokemon_peso;
+    private javax.swing.JTextField jTextField_pokemon_velocidad;
+    private javax.swing.JDialog menu;
     private javax.swing.JDialog pokedex;
     // End of variables declaration//GEN-END:variables
 }
