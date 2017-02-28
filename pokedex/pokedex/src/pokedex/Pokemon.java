@@ -10,7 +10,7 @@ package pokedex;
  * @author Michelle
  */
 public class Pokemon {
-    
+
     private String Nombre;
     private String Apodo;
     private String Descripcion;
@@ -27,13 +27,10 @@ public class Pokemon {
     private int AtaqueEspecial;
     private int DefensaEspecial;
     private int Velocidad;
-    private Pokemon Evolucion1;
-    private Pokemon Evolucion2;
+    private String Evolucion;
     private String Imagen;
-    
-    public Pokemon(String Nombre, String Apodo, String Descripcion, double Peso, double Altura, String Categoria,
-            String Habilidades, String Genero, String Tipos, String Debilidades, int Hp, int Ataque, int Defensa, 
-            int AtaqueEspecial, int DefensaEspecial, int Velocidad, Pokemon Evolucion1, Pokemon Evolucion2, String Imagen){
+
+    public Pokemon(String Nombre, String Apodo, String Descripcion, double Peso, double Altura, String Categoria, String Habilidades, String Genero, String Tipos, String Debilidades, int Hp, int Ataque, int Defensa, int AtaqueEspecial, int DefensaEspecial, int Velocidad, String Evolucion, String Imagen) {
         this.Nombre = Nombre;
         this.Apodo = Apodo;
         this.Descripcion = Descripcion;
@@ -50,11 +47,10 @@ public class Pokemon {
         this.AtaqueEspecial = AtaqueEspecial;
         this.DefensaEspecial = DefensaEspecial;
         this.Velocidad = Velocidad;
-        this.Evolucion1 = Evolucion1;
-        this.Evolucion2 = Evolucion2;
+        this.Evolucion = Evolucion;
         this.Imagen = Imagen;
     }
-    
+
     public String getNombre() {
         return Nombre;
     }
@@ -183,21 +179,15 @@ public class Pokemon {
         this.Velocidad = Velocidad;
     }
 
-    public Pokemon getEvolucion1() {
-        return Evolucion1;
+    public String getEvolucion() {
+        return Evolucion;
     }
 
-    public void setEvolucion1(Pokemon Evolucion1) {
-        this.Evolucion1 = Evolucion1;
+    public void setEvolucion(String Evolucion) {
+        this.Evolucion = Evolucion;
     }
 
-    public Pokemon getEvolucion2() {
-        return Evolucion2;
-    }
-
-    public void setEvolucion2(Pokemon Evolucion2) {
-        this.Evolucion2 = Evolucion2;
-    }
+    
 
     public String getImagen() {
         return Imagen;
@@ -206,13 +196,13 @@ public class Pokemon {
     public void setImagen(String Imagen) {
         this.Imagen = Imagen;
     }
-    
+
     @Override
-    public String toString(){
-        return "Nombre=" + Nombre + "Apodo=" + Apodo + "Descripcion=" + Descripcion + "Peso=" + Peso + "Altura=" + Altura
-                + "Categoria=" + Categoria + "Habilidades=" + Habilidades + "Genero=" + Genero + "Tipos=" + Tipos + 
-                "Debilidades=" + Debilidades + "Hp=" + Hp + "Ataque=" + Ataque + "Defensa=" + Defensa + "AtaqueEspecial=" 
-                + AtaqueEspecial + "DefensaEspecial=" + DefensaEspecial + "Velocidad=" + Velocidad + "Evolucion1=" 
-                + Evolucion1.Nombre + "Evolucion2" + Evolucion2.Nombre + "Imagen=" + Imagen;
-    }    
+    public String toString() {
+        return Nombre + ";" + Apodo + ";" + Descripcion + ";" + Peso + ";" + Altura + ";"
+                + Categoria + ";" + Habilidades + ";" + Genero + ";" + Tipos + ";"
+                + Debilidades + ";" + Hp + ";" + Ataque + ";" + Defensa + ";"
+                + AtaqueEspecial + ";" + DefensaEspecial + ";" + Velocidad + ";"
+                + Evolucion + ";" + Imagen + ";"+"~";
+    }
 }
