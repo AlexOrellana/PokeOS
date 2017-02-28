@@ -1,0 +1,1 @@
+x;x;x;2.0;2.0;x;x-x-x-x;HOMBRE;ACERO;x;2;2;2;2;2;2;x;C:\Users\alex\Desktop\PokeOS\pokedex\pokedex\src\pokedex\totodile.gif;~

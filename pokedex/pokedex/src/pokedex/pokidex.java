@@ -10,9 +10,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -130,8 +133,8 @@ public class pokidex extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         pokedex = new javax.swing.JDialog();
         jLabel33 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        botton_1 = new javax.swing.JButton();
+        jComboBox_elejir_pokemon = new javax.swing.JComboBox<>();
+        botton_pokemon = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -516,16 +519,21 @@ public class pokidex extends javax.swing.JFrame {
         jLabel33.setText("MENU");
         pokedex.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
 
-        pokedex.getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 210, -1));
-
-        botton_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/animated_question_marks_bubbling1.gif"))); // NOI18N
-        botton_1.setPreferredSize(new java.awt.Dimension(60, 60));
-        botton_1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox_elejir_pokemon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botton_1ActionPerformed(evt);
+                jComboBox_elejir_pokemonActionPerformed(evt);
             }
         });
-        pokedex.getContentPane().add(botton_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 130));
+        pokedex.getContentPane().add(jComboBox_elejir_pokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 210, -1));
+
+        botton_pokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/animated_question_marks_bubbling1.gif"))); // NOI18N
+        botton_pokemon.setPreferredSize(new java.awt.Dimension(60, 60));
+        botton_pokemon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botton_pokemonActionPerformed(evt);
+            }
+        });
+        pokedex.getContentPane().add(botton_pokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 130));
 
         jButton5.setText("Cancelar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -636,6 +644,25 @@ public class pokidex extends javax.swing.JFrame {
 
     private void jButton_login_entras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras1ActionPerformed
         // TODO add your handling code here:
+        String info = otaku.pokemons.Buscar(0);
+
+        String s2;
+        int numTokens = 0;
+        StringTokenizer st = new StringTokenizer(info, ";");
+
+        while (st.hasMoreTokens()) {
+            s2 = st.nextToken();
+            temp.add(s2);
+            numTokens++;
+        }
+
+        Pokemon p = new Pokemon(temp.get(0), temp.get(1), temp.get(2), Double.parseDouble(temp.get(3)), Double.parseDouble(temp.get(4)), temp.get(5), temp.get(6), temp.get(7), temp.get(8), temp.get(9), Integer.parseInt(temp.get(10)), Integer.parseInt(temp.get(11)), Integer.parseInt(temp.get(12)), Integer.parseInt(temp.get(13)), Integer.parseInt(temp.get(14)), Integer.parseInt(temp.get(15)), temp.get(16), temp.get(17));
+        temp_p.add(p);
+        
+        for (int i = 0; i < temp_p.size(); i++) {
+            jComboBox_elejir_pokemon.addItem(temp_p.get(i).getNombre());
+        }
+
         pokedex.setSize(417, 744);
         pokedex.setLocationRelativeTo(this);
         menu.setVisible(false);
@@ -664,14 +691,16 @@ public class pokidex extends javax.swing.JFrame {
                 sexo = jComboBox_Usuario_sexoJugador.getSelectedItem().toString(),
                 contraseña = jTextField_Usuario_contraseña.getText(),
                 region = jComboBox_Usuario_region.getSelectedItem().toString();
-        
+
         int edad = Integer.parseInt(jTextField_Usuario_edad.getText());
-        
+
         otaku = new Usuario(nombre, contraseña, sexo, edad, region);
-        
-        jTextField_Usuario_nombre.setText("");    
+
+        jTextField_Usuario_nombre.setText("");
         jTextField_Usuario_contraseña.setText("");
         jTextField_Usuario_edad.setText("");
+        Agregar_usuario.setVisible(false);
+        this.setVisible(true);
     }//GEN-LAST:event_jButton_guardarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -688,19 +717,22 @@ public class pokidex extends javax.swing.JFrame {
                 tipo = jComboBox_pokemon_tipo.getSelectedItem().toString(),
                 debilidades = jTextArea_pokemon_debilidades.getText(),
                 evolucion = jTextField_pokemon_evolucion.getText(),
-                imagen=jLabel_pokemon_img_dir.getText();
-        
+                imagen = jLabel_pokemon_img_dir.getText();
+
         double peso = Double.parseDouble(jTextField_pokemon_peso.getText()),
                 altura = Double.parseDouble(jTextField_pokemon_altura.getText());
-        
+
         int hp = Integer.parseInt(jTextField_pokemon_hp.getText()),
                 ataque = Integer.parseInt(jTextField_pokemon_ataque.getText()),
                 defensa = Integer.parseInt(jTextField_pokemon_defensa.getText()),
                 ataque_especial = Integer.parseInt(jTextField_pokemon_ataque_especial.getText()),
                 defensa_especial = Integer.parseInt(jTextField_pokemon_defensa_especial.getText()),
                 velocidad = Integer.parseInt(jTextField_pokemon_velocidad.getText());
-        
-        otaku.pokemons.Agregar(new Pokemon(nombre, apodo, descripcion, peso, altura, categoria, habilidades, genero, tipo, debilidades, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, evolucion, imagen));
+
+        otaku.pokemons.Agregar(new Pokemon(nombre, apodo, descripcion, peso, altura, categoria, habilidades, genero, tipo, debilidades, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, evolucion,imagen));
+
+        Agregar_Pokemon.setVisible(false);
+        menu.setVisible(true);
         
         jTextField_pokemon_nombre.setText("");
         jTextField_pokemon_apodo.setText("");
@@ -755,15 +787,15 @@ public class pokidex extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void botton_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_1ActionPerformed
+    private void botton_pokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_pokemonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botton_1ActionPerformed
+    }//GEN-LAST:event_botton_pokemonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Agregar_Pokemon.setVisible(false);
         menu.setVisible(true);
-        
+
         jTextField_pokemon_nombre.setText("");
         jTextField_pokemon_apodo.setText("");
         jTextArea_pokemon_descripcion.setText("");
@@ -802,8 +834,8 @@ public class pokidex extends javax.swing.JFrame {
         // TODO add your handling code here:
         Agregar_usuario.setVisible(false);
         this.setVisible(true);
-        
-        jTextField_Usuario_nombre.setText("");    
+
+        jTextField_Usuario_nombre.setText("");
         jTextField_Usuario_contraseña.setText("");
         jTextField_Usuario_edad.setText("");
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -813,6 +845,16 @@ public class pokidex extends javax.swing.JFrame {
         menu.setVisible(false);
         this.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jComboBox_elejir_pokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_elejir_pokemonActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < temp_p.size(); i++) {
+            if (jComboBox_elejir_pokemon.getSelectedItem().toString().equals(temp_p.get(i).getNombre())) {
+                ImageIcon icon = new ImageIcon(temp_p.get(i).getImagen());
+                botton_pokemon.setIcon(icon);
+            }
+        }
+    }//GEN-LAST:event_jComboBox_elejir_pokemonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -853,9 +895,9 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JDialog Agregar_Pokemon;
     private javax.swing.JDialog Agregar_usuario;
     private javax.swing.JDialog Login;
-    private javax.swing.JButton botton_1;
     private javax.swing.JButton botton_crearUsuario;
     private javax.swing.JButton botton_login;
+    private javax.swing.JButton botton_pokemon;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -871,9 +913,9 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JButton jButton_login_entras7;
     private javax.swing.JButton jButton_login_entras8;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox_Usuario_region;
     private javax.swing.JComboBox<String> jComboBox_Usuario_sexoJugador;
+    private javax.swing.JComboBox<String> jComboBox_elejir_pokemon;
     private javax.swing.JComboBox<String> jComboBox_pokemon_genero;
     private javax.swing.JComboBox<String> jComboBox_pokemon_tipo;
     private javax.swing.JLabel jLabel1;
@@ -950,4 +992,6 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JDialog pokedex;
     // End of variables declaration//GEN-END:variables
     Usuario otaku = null;
+    ArrayList<String> temp = new ArrayList();
+    ArrayList<Pokemon> temp_p = new ArrayList();
 }
