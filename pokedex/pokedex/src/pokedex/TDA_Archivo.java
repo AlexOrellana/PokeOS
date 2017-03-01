@@ -28,10 +28,10 @@ public class TDA_Archivo {
         FileWriter fichero = null;
         PrintWriter pw = null;
         try {
-            fichero = new FileWriter(nombre + ".txt");
+            fichero = new FileWriter(nombre + ".txt",true);
             pw = new PrintWriter(fichero);
 
-            pw.println(x.toString());
+            pw.append(x.toString());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -259,5 +259,32 @@ public class TDA_Archivo {
     void Eliminar() {
         File x = new File(nombre + ".txt");
         x.delete();
+    }
+    
+    int size(){
+        int tamaño=0;
+        
+        try {
+            String s1;
+            String s2;
+
+            BufferedReader br = new BufferedReader(new FileReader(nombre + ".txt"));
+
+            s1 = br.readLine();
+
+            int numTokens = 0;
+            StringTokenizer st = new StringTokenizer(s1, "~");
+
+            while (st.hasMoreTokens()) {
+                s2 = st.nextToken();
+                tamaño++;
+                numTokens++;
+            }
+
+            br.close();
+        } catch (Exception e) { //Catch de excepciones
+            System.err.println("Ocurrio un error: " + e.getMessage());
+        }
+        return tamaño;
     }
 }

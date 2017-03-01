@@ -624,10 +624,18 @@ public class pokidex extends javax.swing.JFrame {
 
     private void jButton_login_entrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entrasActionPerformed
         // TODO add your handling code here:
-        menu.setSize(417, 744);
-        menu.setLocationRelativeTo(this);
-        Login.setVisible(false);
-        menu.setVisible(true);
+        for (int i = 0; i < Entrenadores.size(); i++) {
+            if (jTextField_login_nombre.getText().equals(Entrenadores.get(i).getNombre()) && jTextField_login_password.getText().equals(Entrenadores.get(i).getContraseña())) {
+                menu.setSize(417, 744);
+                menu.setLocationRelativeTo(this);
+                Login.setVisible(false);
+                menu.setVisible(true);
+                Entrenador_Conectado = i;
+            } else {
+                jTextField_login_nombre.setText("");
+                jTextField_login_password.setText("");
+            }
+        }
     }//GEN-LAST:event_jButton_login_entrasActionPerformed
 
     private void botton_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_loginActionPerformed
@@ -644,23 +652,39 @@ public class pokidex extends javax.swing.JFrame {
 
     private void jButton_login_entras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras1ActionPerformed
         // TODO add your handling code here:
-        String info = otaku.pokemons.Buscar(0);
+        if (temp_p.isEmpty()) {
 
-        String s2;
-        int numTokens = 0;
-        StringTokenizer st = new StringTokenizer(info, ";");
+        } else {
+            temp_p.clear();
+        }
+        jComboBox_elejir_pokemon.removeAllItems();
 
-        while (st.hasMoreTokens()) {
-            s2 = st.nextToken();
-            temp.add(s2);
-            numTokens++;
+        for (int i = 0; i < Entrenadores.get(Entrenador_Conectado).getPokemons().size(); i++) {
+            System.out.println(temp_p.size());
+            if (temp.isEmpty()) {
+
+            } else {
+                temp.clear();
+            }
+
+            String info = Entrenadores.get(Entrenador_Conectado).pokemons.Buscar(i);
+            String s2;
+            int numTokens = 0;
+            StringTokenizer st = new StringTokenizer(info, ";");
+
+            while (st.hasMoreTokens()) {
+                s2 = st.nextToken();
+                temp.add(s2);
+                numTokens++;
+            }
+
+            Pokemon p = new Pokemon(temp.get(0), temp.get(1), temp.get(2), Double.parseDouble(temp.get(3)), Double.parseDouble(temp.get(4)), temp.get(5), temp.get(6), temp.get(7), temp.get(8), temp.get(9), Integer.parseInt(temp.get(10)), Integer.parseInt(temp.get(11)), Integer.parseInt(temp.get(12)), Integer.parseInt(temp.get(13)), Integer.parseInt(temp.get(14)), Integer.parseInt(temp.get(15)), temp.get(16), temp.get(17));
+            temp_p.add(p);
+
         }
 
-        Pokemon p = new Pokemon(temp.get(0), temp.get(1), temp.get(2), Double.parseDouble(temp.get(3)), Double.parseDouble(temp.get(4)), temp.get(5), temp.get(6), temp.get(7), temp.get(8), temp.get(9), Integer.parseInt(temp.get(10)), Integer.parseInt(temp.get(11)), Integer.parseInt(temp.get(12)), Integer.parseInt(temp.get(13)), Integer.parseInt(temp.get(14)), Integer.parseInt(temp.get(15)), temp.get(16), temp.get(17));
-        temp_p.add(p);
-        
-        for (int i = 0; i < temp_p.size(); i++) {
-            jComboBox_elejir_pokemon.addItem(temp_p.get(i).getNombre());
+        for (int j = 0; j < temp_p.size(); j++) {
+            jComboBox_elejir_pokemon.addItem(temp_p.get(j).getNombre());
         }
 
         pokedex.setSize(417, 744);
@@ -694,7 +718,7 @@ public class pokidex extends javax.swing.JFrame {
 
         int edad = Integer.parseInt(jTextField_Usuario_edad.getText());
 
-        otaku = new Usuario(nombre, contraseña, sexo, edad, region);
+        Entrenadores.add(new Usuario(nombre, contraseña, sexo, edad, region));
 
         jTextField_Usuario_nombre.setText("");
         jTextField_Usuario_contraseña.setText("");
@@ -729,11 +753,11 @@ public class pokidex extends javax.swing.JFrame {
                 defensa_especial = Integer.parseInt(jTextField_pokemon_defensa_especial.getText()),
                 velocidad = Integer.parseInt(jTextField_pokemon_velocidad.getText());
 
-        otaku.pokemons.Agregar(new Pokemon(nombre, apodo, descripcion, peso, altura, categoria, habilidades, genero, tipo, debilidades, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, evolucion,imagen));
+        Entrenadores.get(Entrenador_Conectado).pokemons.Agregar(new Pokemon(nombre, apodo, descripcion, peso, altura, categoria, habilidades, genero, tipo, debilidades, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, evolucion, imagen));
 
         Agregar_Pokemon.setVisible(false);
         menu.setVisible(true);
-        
+
         jTextField_pokemon_nombre.setText("");
         jTextField_pokemon_apodo.setText("");
         jTextArea_pokemon_descripcion.setText("");
@@ -991,7 +1015,9 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JDialog menu_Modificar_Eliminar;
     private javax.swing.JDialog pokedex;
     // End of variables declaration//GEN-END:variables
-    Usuario otaku = null;
+
+    ArrayList<Usuario> Entrenadores = new ArrayList();
+    int Entrenador_Conectado = 0;
     ArrayList<String> temp = new ArrayList();
     ArrayList<Pokemon> temp_p = new ArrayList();
 }

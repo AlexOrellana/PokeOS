@@ -1,1 +1,1 @@
-x;x;x;2.0;2.0;x;x-x-x-x;HOMBRE;ACERO;x;2;2;2;2;2;2;x;C:\Users\alex\Desktop\PokeOS\pokedex\pokedex\src\pokedex\totodile.gif;~
+a;a;a;1.0;1.0;a;a-a-a-a;HOMBRE;ACERO;a;1;1;1;1;1;1;a;C:\Users\alex\Desktop\PokeOS\pokedex\pokedex\src\pokedex\totodile.gif~b;b;b;2.0;2.0;b;b-b-b-b;HOMBRE;ACERO;b;2;2;2;2;2;2;b;C:\Users\alex\Desktop\PokeOS\pokedex\pokedex\src\pokedex\rowlet.gif~c;c;c;3.0;3.0;c;c-c-c-c;HOMBRE;ACERO;c;3;3;3;3;3;3;c;C:\Users\alex\Desktop\PokeOS\pokedex\pokedex\src\pokedex\chatot.gif~

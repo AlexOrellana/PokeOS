@@ -203,6 +203,6 @@ public class Pokemon {
                 + Categoria + ";" + Habilidades + ";" + Genero + ";" + Tipos + ";"
                 + Debilidades + ";" + Hp + ";" + Ataque + ";" + Defensa + ";"
                 + AtaqueEspecial + ";" + DefensaEspecial + ";" + Velocidad + ";"
-                + Evolucion + ";" + Imagen + ";"+"~";
+                + Evolucion + ";" + Imagen +"~";
     }
 }

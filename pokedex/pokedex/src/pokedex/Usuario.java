@@ -76,7 +76,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return nombre + ";" + contraseña + ";" + sexo + ";" + edad + ";" + region + ";" + pokemons + ";"+"~";
+        return nombre + ";" + contraseña + ";" + sexo + ";" + edad + ";" + region + ";" + pokemons +"~";
     }
 
 }
