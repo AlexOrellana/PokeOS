@@ -16,7 +16,7 @@ public class Usuario {
     String sexo;
     int edad;
     String region;
-    TDA_Archivo pokemons = new TDA_Archivo("Pokemons_" + nombre);
+    TDA_Archivo pokemons;
 
     public Usuario(String nombre, String contraseña, String sexo, int edad, String region) {
         this.nombre = nombre;
@@ -24,6 +24,7 @@ public class Usuario {
         this.sexo = sexo;
         this.edad = edad;
         this.region = region;
+        this.pokemons = new TDA_Archivo("Pokemons_" + this.nombre);
     }
 
     public String getNombre() {
@@ -76,7 +77,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return nombre + ";" + contraseña + ";" + sexo + ";" + edad + ";" + region + ";" + pokemons +"~";
+        return nombre + ";" + contraseña + ";" + sexo + ";" + edad + ";" + region + "~";
     }
 
 }

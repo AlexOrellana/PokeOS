@@ -32,6 +32,30 @@ public class pokidex extends javax.swing.JFrame {
     public pokidex() {
         initComponents();
         this.setLocationRelativeTo(this);
+
+        if (personas.size() != 0) {
+            for (int i = 0; i < personas.size(); i++) {
+                if (temp.isEmpty()) {
+
+                } else {
+                    temp.clear();
+                }
+
+                String info = personas.Buscar(i);
+                String s2;
+                int numTokens = 0;
+                StringTokenizer st = new StringTokenizer(info, ";");
+
+                while (st.hasMoreTokens()) {
+                    s2 = st.nextToken();
+                    temp.add(s2);
+                    numTokens++;
+                }
+
+                Usuario u = new Usuario(temp.get(0), temp.get(1), temp.get(2), Integer.parseInt(temp.get(3)), temp.get(4));
+                Entrenadores.add(u);
+            }
+        }
     }
 
     /**
@@ -662,11 +686,10 @@ public class pokidex extends javax.swing.JFrame {
                 Login.setVisible(false);
                 menu.setVisible(true);
                 Entrenador_Conectado = i;
-            } else {
-                jTextField_login_nombre.setText("");
-                jTextField_login_password.setText("");
             }
         }
+        jTextField_login_nombre.setText("");
+        jTextField_login_password.setText("");
     }//GEN-LAST:event_jButton_login_entrasActionPerformed
 
     private void botton_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_loginActionPerformed
@@ -749,6 +772,7 @@ public class pokidex extends javax.swing.JFrame {
         int edad = Integer.parseInt(jTextField_Usuario_edad.getText());
 
         Entrenadores.add(new Usuario(nombre, contraseña, sexo, edad, region));
+        personas.Agregar(new Usuario(nombre, contraseña, sexo, edad, region));
 
         jTextField_Usuario_nombre.setText("");
         jTextField_Usuario_contraseña.setText("");
@@ -878,6 +902,7 @@ public class pokidex extends javax.swing.JFrame {
         // TODO add your handling code here:
         pokedex.setVisible(false);
         menu.setVisible(true);
+        botton_pokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/animated_question_marks_bubbling1.gif")));
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -915,7 +940,7 @@ public class pokidex extends javax.swing.JFrame {
                 jTextArea_info_info.setText(temp_p.get(i).info());
             }
         }
-        
+
         pokedex_info.setSize(636, 744);
         pokedex_info.setLocationRelativeTo(this);
         pokedex.setVisible(false);
@@ -1075,4 +1100,5 @@ public class pokidex extends javax.swing.JFrame {
     int Entrenador_Conectado = 0;
     ArrayList<String> temp = new ArrayList();
     ArrayList<Pokemon> temp_p = new ArrayList();
+    TDA_Archivo personas = new TDA_Archivo("personas");
 }

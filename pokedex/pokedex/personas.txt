@@ -1,0 +1,1 @@
+a;a;Hombre;1;Kanto~b;b;Mujer;2;Kanto~c;c;Hombre;3;Alola~
