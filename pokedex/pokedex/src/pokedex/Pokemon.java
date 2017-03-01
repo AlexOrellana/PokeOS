@@ -5,6 +5,8 @@
  */
 package pokedex;
 
+import java.util.StringTokenizer;
+
 /**
  *
  * @author Michelle
@@ -196,7 +198,47 @@ public class Pokemon {
     }
 
     public String info() {
-        return "Nombre:\n" + Nombre + "\n\nApodo:\n" + Apodo + "\n\nDescripcion:\n" + Descripcion + "\n\nPeso:\n" + Peso + "\n\nAltura\n" + Altura + "\n\nCategoria:\n" + Categoria + "\n\nHabilidades:\n" + Habilidades + "\n\nGenero:\n" + Genero + "\n\nTipos:\n" + Tipos + "\n\nDebilidades:\n" + Debilidades + "\n\nStats:\nHp: " + Hp + "\nAtaque: " + Ataque + "\nDefensa: " + Defensa + "\nAtaque Especial: " + AtaqueEspecial + "\nDefensa Especial: " + DefensaEspecial + "\nVelocidad: " + Velocidad + "\n\nEvolucion:\n" + Evolucion;
+
+        String temp = "";
+        temp += "Nombre:\n" + Nombre
+                + "\n\nApodo:\n" + Apodo
+                + "\n\nDescripcion:\n" + Descripcion
+                + "\n\nPeso:\n" + Peso
+                + "\n\nAltura\n" + Altura
+                + "\n\nCategoria:\n" + Categoria
+                + "\n\nHabilidades:\n";
+
+        try {
+            String s1;
+            String s2;
+            int cont = 1;
+
+            s1 = Habilidades;
+
+            int numTokens = 0;
+            StringTokenizer st = new StringTokenizer(s1, "-");
+
+            while (st.hasMoreTokens()) {
+                s2 = st.nextToken();
+                temp += s2 + "\n";
+                numTokens++;
+            }
+
+        } catch (Exception e) { //Catch de excepciones
+            System.err.println("Ocurrio un error: " + e.getMessage());
+        }
+
+        temp += "\n\nGenero:\n" + Genero
+                + "\n\nTipos:\n" + Tipos
+                + "\n\nDebilidades:\n" + Debilidades
+                + "\n\nStats:\nHp: " + Hp
+                + "\nAtaque: " + Ataque
+                + "\nDefensa: " + Defensa
+                + "\nAtaque Especial: " + AtaqueEspecial
+                + "\nDefensa Especial: " + DefensaEspecial
+                + "\nVelocidad: " + Velocidad
+                + "\n\nEvolucion:\n" + Evolucion;
+        return temp;
     }
 
     @Override
