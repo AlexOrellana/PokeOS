@@ -137,6 +137,13 @@ public class pokidex extends javax.swing.JFrame {
         botton_pokemon = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
+        pokedex_info = new javax.swing.JDialog();
+        jLabel35 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea_info_info = new javax.swing.JTextArea();
+        jLabel_info_img = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         botton_login = new javax.swing.JButton();
         botton_crearUsuario = new javax.swing.JButton();
@@ -517,14 +524,14 @@ public class pokidex extends javax.swing.JFrame {
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel33.setText("MENU");
-        pokedex.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
+        pokedex.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 90, -1));
 
         jComboBox_elejir_pokemon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_elejir_pokemonActionPerformed(evt);
             }
         });
-        pokedex.getContentPane().add(jComboBox_elejir_pokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 210, -1));
+        pokedex.getContentPane().add(jComboBox_elejir_pokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 210, -1));
 
         botton_pokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/animated_question_marks_bubbling1.gif"))); // NOI18N
         botton_pokemon.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -533,7 +540,7 @@ public class pokidex extends javax.swing.JFrame {
                 botton_pokemonActionPerformed(evt);
             }
         });
-        pokedex.getContentPane().add(botton_pokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 130));
+        pokedex.getContentPane().add(botton_pokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 210, 130));
 
         jButton5.setText("Cancelar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -541,10 +548,34 @@ public class pokidex extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        pokedex.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+        pokedex.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, -1));
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/367266-wallpaper-pokemon.png"))); // NOI18N
-        pokedex.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/pokedex_template_by_firedragonrem-d9eddon.png"))); // NOI18N
+        pokedex.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 1230));
+
+        pokedex_info.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel35.setText("INFO");
+        pokedex_info.getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 90, -1));
+
+        jButton8.setText("Salir");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        pokedex_info.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, -1));
+
+        jTextArea_info_info.setColumns(20);
+        jTextArea_info_info.setRows(5);
+        jScrollPane3.setViewportView(jTextArea_info_info);
+
+        pokedex_info.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 320, 410));
+        pokedex_info.getContentPane().add(jLabel_info_img, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 290, 220, 210));
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/pokedex_template_by_firedragonrem-d9eddon.png"))); // NOI18N
+        pokedex_info.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 1230));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -660,7 +691,6 @@ public class pokidex extends javax.swing.JFrame {
         jComboBox_elejir_pokemon.removeAllItems();
 
         for (int i = 0; i < Entrenadores.get(Entrenador_Conectado).getPokemons().size(); i++) {
-            System.out.println(temp_p.size());
             if (temp.isEmpty()) {
 
             } else {
@@ -687,7 +717,7 @@ public class pokidex extends javax.swing.JFrame {
             jComboBox_elejir_pokemon.addItem(temp_p.get(j).getNombre());
         }
 
-        pokedex.setSize(417, 744);
+        pokedex.setSize(636, 744);
         pokedex.setLocationRelativeTo(this);
         menu.setVisible(false);
         pokedex.setVisible(true);
@@ -811,10 +841,6 @@ public class pokidex extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void botton_pokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_pokemonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botton_pokemonActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Agregar_Pokemon.setVisible(false);
@@ -880,6 +906,28 @@ public class pokidex extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBox_elejir_pokemonActionPerformed
 
+    private void botton_pokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_pokemonActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < temp_p.size(); i++) {
+            if (jComboBox_elejir_pokemon.getSelectedItem().toString().equals(temp_p.get(i).getNombre())) {
+                ImageIcon icon = new ImageIcon(temp_p.get(i).getImagen());
+                jLabel_info_img.setIcon(icon);
+                jTextArea_info_info.setText(temp_p.get(i).info());
+            }
+        }
+        
+        pokedex_info.setSize(636, 744);
+        pokedex_info.setLocationRelativeTo(this);
+        pokedex.setVisible(false);
+        pokedex_info.setVisible(true);
+    }//GEN-LAST:event_botton_pokemonActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        pokedex_info.setVisible(false);
+        pokedex.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -929,6 +977,7 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton_guardar;
     private javax.swing.JButton jButton_login_entras;
     private javax.swing.JButton jButton_login_entras1;
@@ -970,6 +1019,8 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -977,6 +1028,7 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_avatarJugador;
     private javax.swing.JLabel jLabel_edad;
+    private javax.swing.JLabel jLabel_info_img;
     private javax.swing.JLabel jLabel_login_nombre;
     private javax.swing.JLabel jLabel_login_password;
     private javax.swing.JLabel jLabel_nombre;
@@ -988,6 +1040,8 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_sexo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea_info_info;
     private javax.swing.JTextArea jTextArea_pokemon_debilidades;
     private javax.swing.JTextArea jTextArea_pokemon_descripcion;
     private javax.swing.JTextField jTextField_Usuario_contraseña;
@@ -1014,6 +1068,7 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JDialog menu;
     private javax.swing.JDialog menu_Modificar_Eliminar;
     private javax.swing.JDialog pokedex;
+    private javax.swing.JDialog pokedex_info;
     // End of variables declaration//GEN-END:variables
 
     ArrayList<Usuario> Entrenadores = new ArrayList();
