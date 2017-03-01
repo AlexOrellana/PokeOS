@@ -150,9 +150,9 @@ public class pokidex extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         menu_Modificar_Eliminar = new javax.swing.JDialog();
         jLabel31 = new javax.swing.JLabel();
-        jButton_login_entras7 = new javax.swing.JButton();
-        jButton_login_entras8 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton_modificar = new javax.swing.JButton();
+        jButton_eliminar = new javax.swing.JButton();
+        jComboBox_Modificar_Eliminar = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         pokedex = new javax.swing.JDialog();
@@ -515,23 +515,23 @@ public class pokidex extends javax.swing.JFrame {
         jLabel31.setText("MENU");
         menu_Modificar_Eliminar.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, -1));
 
-        jButton_login_entras7.setText("Modificar Pokemon");
-        jButton_login_entras7.addActionListener(new java.awt.event.ActionListener() {
+        jButton_modificar.setText("Modificar Pokemon");
+        jButton_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_login_entras7ActionPerformed(evt);
+                jButton_modificarActionPerformed(evt);
             }
         });
-        menu_Modificar_Eliminar.getContentPane().add(jButton_login_entras7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 130, -1));
+        menu_Modificar_Eliminar.getContentPane().add(jButton_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 130, -1));
 
-        jButton_login_entras8.setText("Eliminar Pokemon");
-        jButton_login_entras8.addActionListener(new java.awt.event.ActionListener() {
+        jButton_eliminar.setText("Eliminar Pokemon");
+        jButton_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_login_entras8ActionPerformed(evt);
+                jButton_eliminarActionPerformed(evt);
             }
         });
-        menu_Modificar_Eliminar.getContentPane().add(jButton_login_entras8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 120, -1));
+        menu_Modificar_Eliminar.getContentPane().add(jButton_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 120, -1));
 
-        menu_Modificar_Eliminar.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 210, -1));
+        menu_Modificar_Eliminar.getContentPane().add(jComboBox_Modificar_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 210, -1));
 
         jButton4.setText("Cancelar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -732,7 +732,11 @@ public class pokidex extends javax.swing.JFrame {
             }
 
             Pokemon p = new Pokemon(temp.get(0), temp.get(1), temp.get(2), Double.parseDouble(temp.get(3)), Double.parseDouble(temp.get(4)), temp.get(5), temp.get(6), temp.get(7), temp.get(8), temp.get(9), Integer.parseInt(temp.get(10)), Integer.parseInt(temp.get(11)), Integer.parseInt(temp.get(12)), Integer.parseInt(temp.get(13)), Integer.parseInt(temp.get(14)), Integer.parseInt(temp.get(15)), temp.get(16), temp.get(17));
-            temp_p.add(p);
+            if (p.toString().contains("*")) {
+
+            } else {
+                temp_p.add(p);
+            }
 
         }
 
@@ -756,6 +760,44 @@ public class pokidex extends javax.swing.JFrame {
 
     private void jButton_login_entras4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras4ActionPerformed
         // TODO add your handling code here:
+        if (temp_p.isEmpty()) {
+
+        } else {
+            temp_p.clear();
+        }
+        jComboBox_Modificar_Eliminar.removeAllItems();
+
+        for (int i = 0; i < Entrenadores.get(Entrenador_Conectado).getPokemons().size(); i++) {
+            if (temp.isEmpty()) {
+
+            } else {
+                temp.clear();
+            }
+
+            String info = Entrenadores.get(Entrenador_Conectado).pokemons.Buscar(i);
+            String s2;
+            int numTokens = 0;
+            StringTokenizer st = new StringTokenizer(info, ";");
+
+            while (st.hasMoreTokens()) {
+                s2 = st.nextToken();
+                temp.add(s2);
+                numTokens++;
+            }
+
+            Pokemon p = new Pokemon(temp.get(0), temp.get(1), temp.get(2), Double.parseDouble(temp.get(3)), Double.parseDouble(temp.get(4)), temp.get(5), temp.get(6), temp.get(7), temp.get(8), temp.get(9), Integer.parseInt(temp.get(10)), Integer.parseInt(temp.get(11)), Integer.parseInt(temp.get(12)), Integer.parseInt(temp.get(13)), Integer.parseInt(temp.get(14)), Integer.parseInt(temp.get(15)), temp.get(16), temp.get(17));
+            if (p.toString().contains("*")) {
+
+            } else {
+                temp_p.add(p);
+            }
+
+        }
+
+        for (int j = 0; j < temp_p.size(); j++) {
+            jComboBox_Modificar_Eliminar.addItem(temp_p.get(j).getNombre());
+        }
+
         menu_Modificar_Eliminar.setSize(417, 744);
         menu_Modificar_Eliminar.setLocationRelativeTo(this);
         menu.setVisible(false);
@@ -834,16 +876,59 @@ public class pokidex extends javax.swing.JFrame {
         jLabel_pokemon_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokedex/animated_question_marks_bubbling1.gif")));
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton_login_entras7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras7ActionPerformed
+    private void jButton_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificarActionPerformed
         // TODO add your handling code here:
         Agregar_Pokemon.setSize(1175, 720);
         Agregar_Pokemon.setLocationRelativeTo(this);
         Agregar_Pokemon.setVisible(true);
-    }//GEN-LAST:event_jButton_login_entras7ActionPerformed
+    }//GEN-LAST:event_jButton_modificarActionPerformed
 
-    private void jButton_login_entras8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_login_entras8ActionPerformed
+    private void jButton_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_eliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_login_entras8ActionPerformed
+        for (int i = 0; i < temp_p.size(); i++) {
+            if (jComboBox_Modificar_Eliminar.getSelectedItem().toString().equals(temp_p.get(i).getNombre())) {
+                Entrenadores.get(Entrenador_Conectado).pokemons.Borrar(i);
+            }
+        }
+
+        if (temp_p.isEmpty()) {
+
+        } else {
+            temp_p.clear();
+        }
+        jComboBox_Modificar_Eliminar.removeAllItems();
+
+        for (int i = 0; i < Entrenadores.get(Entrenador_Conectado).getPokemons().size(); i++) {
+            if (temp.isEmpty()) {
+
+            } else {
+                temp.clear();
+            }
+
+            String info = Entrenadores.get(Entrenador_Conectado).pokemons.Buscar(i);
+            String s2;
+            int numTokens = 0;
+            StringTokenizer st = new StringTokenizer(info, ";");
+
+            while (st.hasMoreTokens()) {
+                s2 = st.nextToken();
+                temp.add(s2);
+                numTokens++;
+            }
+
+            Pokemon p = new Pokemon(temp.get(0), temp.get(1), temp.get(2), Double.parseDouble(temp.get(3)), Double.parseDouble(temp.get(4)), temp.get(5), temp.get(6), temp.get(7), temp.get(8), temp.get(9), Integer.parseInt(temp.get(10)), Integer.parseInt(temp.get(11)), Integer.parseInt(temp.get(12)), Integer.parseInt(temp.get(13)), Integer.parseInt(temp.get(14)), Integer.parseInt(temp.get(15)), temp.get(16), temp.get(17));
+            if (p.toString().contains("*")) {
+
+            } else {
+                temp_p.add(p);
+            }
+
+        }
+
+        for (int j = 0; j < temp_p.size(); j++) {
+            jComboBox_Modificar_Eliminar.addItem(temp_p.get(j).getNombre());
+        }
+    }//GEN-LAST:event_jButton_eliminarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -1003,14 +1088,14 @@ public class pokidex extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton_eliminar;
     private javax.swing.JButton jButton_guardar;
     private javax.swing.JButton jButton_login_entras;
     private javax.swing.JButton jButton_login_entras1;
     private javax.swing.JButton jButton_login_entras2;
     private javax.swing.JButton jButton_login_entras4;
-    private javax.swing.JButton jButton_login_entras7;
-    private javax.swing.JButton jButton_login_entras8;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton_modificar;
+    private javax.swing.JComboBox<String> jComboBox_Modificar_Eliminar;
     private javax.swing.JComboBox<String> jComboBox_Usuario_region;
     private javax.swing.JComboBox<String> jComboBox_Usuario_sexoJugador;
     private javax.swing.JComboBox<String> jComboBox_elejir_pokemon;
