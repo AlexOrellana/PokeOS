@@ -172,7 +172,7 @@ public class TDA_Archivo {
                 s2 = st.nextToken();
                 numTokens++;
                 if (cont == x) {
-                    temp += (s );
+                    temp += (s);
                 } else {
                     temp += (s2 + "~");
                 }
