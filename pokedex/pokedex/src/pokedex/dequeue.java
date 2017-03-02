@@ -10,25 +10,10 @@ package pokedex;
  * @author alex
  */
 public class dequeue {
-        public class node {
-
-        private Object node;
-        private int priority;
-
-        public node(Object name, int prio) {
-            this.node = name;
-            this.priority = prio;
-        }
-
-        @Override
-        public String toString() {
-            return node + "-" + priority;
-        }
-    }
 
     private node[] heap;
     private int heapSize;
-    private final int capacity = 100;
+    private final int capacity = 1000;
 
     public dequeue() {
         heap = new node[this.capacity + 1];
@@ -52,12 +37,12 @@ public class dequeue {
         return heapSize;
     }
 
-    public void insert(int dir, int priority) {
-        node newJob = new node(dir, priority);
+    public void insert(int position, int tamaño) {
+        node newJob = new node(position, tamaño);
 
         heap[++heapSize] = newJob;
         int pos = heapSize;
-        while (pos != 1 && newJob.priority > heap[pos / 2].priority) {
+        while (pos != 1 && newJob.getPriority() > heap[pos / 2].getPriority()) {
             heap[pos] = heap[pos / 2];
             pos /= 2;
         }
@@ -68,7 +53,7 @@ public class dequeue {
         int parent, child;
         node first, last;
         if (isEmpty()) {
-            System.out.println("Heap is empty");
+            System.out.println("Heap empty");
             return null;
         }
 
@@ -78,10 +63,10 @@ public class dequeue {
         parent = 1;
         child = 2;
         while (child <= heapSize) {
-            if (child < heapSize && heap[child].priority < heap[child + 1].priority) {
+            if (child < heapSize && heap[child].getPriority() < heap[child + 1].getPriority()) {
                 child++;
             }
-            if (last.priority >= heap[child].priority) {
+            if (last.getPriority() >= heap[child].getPriority()) {
                 break;
             }
 
@@ -98,6 +83,6 @@ public class dequeue {
     }
 
     public int peek() {
-        return heap[1].priority;
+        return heap[1].getPriority();
     }
 }
